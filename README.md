@@ -3,6 +3,8 @@
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks)
 for Haskell apps. It uses GHC 7.4.1 and cabal-1.16.0.1.
 
+It clears the cache before compiling - useful in cases of cabal hell
+
 ## Demo
 
 A demo is online here:
@@ -18,7 +20,7 @@ https://github.com/pufuwozu/haskell-buildpack-demo
     $ ls
     Procfile app.cabal src
 
-    $ heroku create --stack=cedar --buildpack https://github.com/pufuwozu/heroku-buildpack-haskell.git
+    $ heroku create --stack=cedar --buildpack https://github.com/richardfergie/heroku-buildpack-haskell.git
 
     $ git push heroku master
     ...
