@@ -17,10 +17,10 @@ if [ ! -e $CACHE_DIR/ghc ]; then
   curl -# --max-time 120 -L "$GHC_URL" | tar xz -C $CACHE_DIR
 fi
 
-rm -r $CACHE_DIR/dotghc
-rm -r $FIXED_HOME/app/.ghc
-rm -r $CACHE_DIR/cabal
-rm -r $FIXED_HOME/.cabal
+rm -rf $CACHE_DIR/dotghc
+rm -rf $FIXED_HOME/app/.ghc
+rm -rf $CACHE_DIR/cabal
+rm -rf $FIXED_HOME/.cabal
 
 # Restore GHC registry if available
 if [ -e $CACHE_DIR/dotghc ]; then
