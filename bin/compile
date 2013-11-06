@@ -8,7 +8,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 FIXED_HOME=/app
-rm -r $CACHE_DIR
+
 mkdir -p $CACHE_DIR
 
 if [ ! -e $CACHE_DIR/ghc ]; then
@@ -40,6 +40,9 @@ fi
 mkdir -p $FIXED_HOME/usr/lib
 ln -s /usr/lib/libgmp.so.3.5.2 $FIXED_HOME/usr/lib/libgmp.so
 export LD_LIBRARY_PATH=$FIXED_HOME/usr/lib
+
+echo "-----> Clearing cabal cache"
+rm -r $FIXED_HOME/.cabal/
 
 # Set PATH
 export PATH=$FIXED_HOME/ghc/bin:$FIXED_HOME/.cabal/bin$PATH
